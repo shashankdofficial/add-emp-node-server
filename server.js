@@ -6,8 +6,8 @@ const port = process.env.PORT||3000;
 const bodyParser = require('body-parser');
 
 app.use(bodyParser.urlencoded({ extended: true }));
-
 app.use(bodyParser.json());
+
 app.set('view engine','ejs');
 
 app.use('/static', express.static(path.join(__dirname, 'public')));
@@ -32,7 +32,7 @@ app.get('/form', (req, res)=>{
 
 //Submit route
 app.post('/submit', (req, res)=>{
-    console.log(req.body);
+    // console.log(req.body);
     const data = JSON.stringify(req.body)
     fs.exists('input.json', (exists) => {
         if (exists) {
