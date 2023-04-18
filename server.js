@@ -31,9 +31,11 @@ app.get('/form', (req, res)=>{
 })
 
 //Submit route
+var arr = [];
 app.post('/submit', (req, res)=>{
     // console.log(req.body);
     const data = JSON.stringify(req.body)
+    arr.push()
     fs.exists('input.json', (exists) => {
         if (exists) {
           fs.appendFile("input.json", ','+data, (err) => {
